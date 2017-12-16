@@ -31,6 +31,21 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "views/minor.html",
             data: { pageTitle: 'Example view' }
         })
+         .state('login', {
+            url: "/login",
+            templateUrl: "views/login.html",
+            data: { pageTitle: 'Login' }
+        })
+          .state('recuperarSenha', {
+            url: "/recuperarSenha",
+            templateUrl: "views/forgot_password.html",
+            data: { pageTitle: 'Recuperar Senha' }
+        })
+          .state('cadastrar', {
+            url: "/cadastrar",
+            templateUrl: "views/register.html",
+            data: { pageTitle: 'Cadastre - se' }
+        })
 }
 angular
     .module('inspinia')
