@@ -20,8 +20,11 @@ function CadastroCtrl($scope, UsuarioService) {
  
  
  $scope.cadastrar=function(){ 
-   //$scope.usuario.role=[];
-   //$scope.usuario.role.push("vendedor", "comprador");
+   var vendedor={role:"vendedor"};
+   var comprador={role:"comprador"};
+     
+     $scope.usuario.role=[];
+   $scope.usuario.role.push(vendedor, comprador);
      UsuarioService.cadastrar($scope.usuario);
      
  }
