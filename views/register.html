@@ -1,54 +1,26 @@
-<div class="middle-box text-center loginscreen   animated fadeInDown" ng-controller="CadastroCtrl">
-    <div>
-        <div>
-
-            <h1 class="logo-name">+DG</h1>
-
+<div class="middle-box">
+    
+    <div class="row" style="height: 50%;">
+            <div class="col-sm-6"> 
+                <h1 class=""><img src="img/logo2.png" width=100%></h1>
+            </div>
+            <div class="col-sm-6" style="text-align: left; margin-top: 75px; " height="70px;">
+                <h4 style="color: #FFFFFF">Cadastre - se no DreamGarage</h4>
+                <p style="color: #FFFFFF">Crie sua conta para encontrar o carro do seus sonhos</p>
+            </div>
         </div>
-        <h3>Cadastre - se no DreamGarage</h3>
-        <p>Crie sua conta para encontrar o carro do seus sonhos</p>
+    
+</div>
+
+<div class="middle-box text-center loginscreen   animated fadeInDown" ng-controller="CadastroCtrl">
+    
+    <div>
         
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Nome" required="" ng-model="usuario.pessoa.nome">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="CPF" required="" ng-model="usuario.pessoa.cpf">
-            </div>
-             <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Data de Nascimento" required="" ng-model="usuario.pessoa.dataDeNascimento">
-             </div>                    
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Telefone" ng-model="usuario.pessoa.telefone">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Celular" required="" ng-model="usuario.pessoa.celular">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="CEP" required="" ng-model="usuario.pessoa.cep">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Endereço" required="" ng-model="usuario.pessoa.logradouro">
-            </div>           
-            <div class="form-group">
-                <input type="number" class="form-control" placeholder="Número" required="" ng-model="usuario.pessoa.numero">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Complemento" ng-model="usuario.pessoa.complemento">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="País" required="" ng-model="usuario.pessoa.pais">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Estado" required="" ng-model="usuario.pessoa.estado">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Cidade" required="" ng-model="usuario.pessoa.cidade">
-            </div>           
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Bairro" ng-model="usuario.pessoa.bairro">
-            </div>
-            
-            <h3> Usuário </h3>
+            </div>        
+                      
+        <h3 style="color: #FFFFFF"> Usuário </h3>
             
             <div class="form-group">
                 <input type="email" class="form-control" placeholder="Email" required="" ng-model="usuario.login">
@@ -60,13 +32,13 @@
                 <input type="password" class="form-control" placeholder="Repita a Senha" required="" ng-model="repitaSenha">
             </div>
             <div class="form-group">
-                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Eu concordo com os termos de política de privacidade </label></div>
+                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i><span style="color: #FFFFFF"> Eu concordo com os termos de política de privacidade </span></label></div>
             </div>
             <button type="submit" class="btn btn-success block full-width m-b" ng-click="cadastrar()">Cadastrar</button>
 
-            <p class="text-center"><small>Já tem uma conta?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="index.html#/login">Entrar</a>
+            <p class="text-center" style="color: #FFFFFF"><small>Já tem uma conta?</small></p>
+            <a class="btn btn-sm btn-white btn-block " href="index.html#/login"><font color="black">Entrar</font></a>
        
-        <p class="m-t"> <small>CopyRight TCC Company 2017</small> </p>
+            <p class="m-t" style="color: #FFFFFF"> <small>CopyRight TCC Company 2017</small> </p>
     </div>
 </div>

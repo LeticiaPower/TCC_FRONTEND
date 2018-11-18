@@ -651,8 +651,8 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   color: #fff;
 }
 .btn-primary {
-  background-color: #1ab394;
-  border-color: #1ab394;
+  background-color: #2f5f71;
+  border-color: #2f5f71;
   color: #FFFFFF;
 }
 .btn-primary:hover,
@@ -3478,9 +3478,9 @@ body.tour-open .animated {
 }
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #006666;
-  font-size: 13px;
-  color: #f0f0f0;
+  background-color: #778899;
+  font-size: 16px;
+  color: #696969;
   overflow-x: hidden;
 }
 html,
@@ -3636,7 +3636,7 @@ video {
   padding: 0 20px;
 }
 .wrapper-content {
-  padding: 20px 10px 40px;
+  padding: 20px 10px 0px;
 }
 #page-wrapper {
   padding: 0 15px;
@@ -3906,7 +3906,7 @@ code {
 .ibox {
   clear: both;
   margin-bottom: 25px;
-  margin-top: 0;
+  margin-top: 5px;
   padding: 0;
 }
 .ibox.collapsed .ibox-content {
@@ -4710,11 +4710,12 @@ body.mini-navbar.fixed-sidebar .logo-element {
   padding: 100px 20px 20px 20px;
 }
 .logo-name {
-  color: #e6e6e6;
-  font-size: 90px;
-  font-weight: 800;
-  letter-spacing: -10px;
-  margin-bottom: 20px;
+    color: #999999;
+    font-size: 70px;
+    font-weight: 800;
+    letter-spacing: -6px;
+    margin-bottom: 20px;
+    float: right;
 }
 .middle-box h1 {
   font-size: 170px;
@@ -5496,7 +5497,7 @@ del {
 }
 .product-imitation {
   text-align: center;
-  padding: 90px 0;
+  padding: 10px 0;
   background-color: #f8f8f9;
   color: #bebec3;
   font-weight: 600;
@@ -5555,8 +5556,8 @@ table.shoping-cart-table tr td:last-child {
 .product-price {
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #1ab394;
+  color: #212121;
+  background-color: #999c9e;
   padding: 6px 12px;
   position: absolute;
   top: -32px;
