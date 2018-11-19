@@ -37,22 +37,24 @@ function LoginCtrl($scope, UsuarioService ) {
      .then(function(response) {
          localStorage.setItem("idUsuario", response.data.id);
         localStorage.setItem("idPessoa", response.data.pessoa.id);
-        window.location.href = 'FRONTEND/index.html#/anuncios';
+        localStorage.setItem("idPessoa", response.data.pessoa);
+        window.location.href = 'index.html#/anuncios';
+        alert("Realizado com sucesso!")
         },function(err){
             alert("Houve um error")
     });
  }
 }
 
-function AnuncioCtrl($scope,AnuncioService ) {
- $scope.anuncios = [];
- $scope.anuncio = {};
+function AnuncioCtrl($scope,VeiculoService ) {
+ $scope.veiculos = [];
+ $scope.veiculo = {};
  
- $scope.buscar=function(anuncio){ 
-
-    anuncios = AnuncioService.buscar()
+$scope.buscarVeiculos=function(){ 
+var id = localStorage.getItem("idPessoa");
+    VeiculoService.buscarPorIdPessoa(id)
      .then(function(response) {
-         console.log('relaizado com sucesso');
+         $scope.veiculos = response.data;
         },function(err){
             alert("Houve um error")
     });
@@ -294,5 +296,7 @@ angular
     .controller('VeiculoCtrl', VeiculoCtrl)
     .controller('RegistroCtrl', RegistroCtrl)
     .controller('LoginCtrl', LoginCtrl);
+   
+    
 
     

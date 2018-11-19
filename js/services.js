@@ -85,6 +85,14 @@ var vm=this;
 return $http.get("http://localhost:8080/app/veiculo/listaVeiculo");    
  };
  
+ vm.buscarPorIdPessoa=function(id){
+return $http.get("http://localhost:8080/app/veiculo/listaVeiculosPessoa"+id);    
+ };
+ 
+ vm.buscar=function(){
+return $http.get("http://localhost:8080/app/veiculo/listaVeiculo");    
+ };
+ 
   vm.alterar=function(veiculo){ 
  return $http.post("http://localhost:8080/app/veiculo/alterarVeiculo", veiculo);    
  };
