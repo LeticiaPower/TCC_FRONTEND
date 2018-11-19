@@ -1,0 +1,136 @@
+ <div id="wrapper">
+
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="img/logo2.png" heigth="140px" width="180px"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold" >Usuario</span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="index.html#/login">Sair</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html#/anuncios"><i class="fa fa-clock-o"></i> <span class="nav-label">Anuncios Recentes</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirInfoPessoal"><i class="fa fa-user-circle"></i> <span class="nav-label">Cadastrar/Alterar Dados</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirPeca"><i class="fa fa-plus-circle"></i> <span class="nav-label">Cadastrar Peça</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirAnuncio"><i class="fa fa-car"></i> <span class="nav-label">Novo Anuncio</span></a>
+                </li>
+                 <li>
+                    <a href="index.html#/buscar"><i class="fa fa-search"></i> <span class="nav-label">Buscar Anúncio</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirVeiculo"><i class="fa fa-plus-circle"></i> <span class="nav-label">Cadastrar Veículo</span></a>
+                </li>
+                                <li>
+                <a href="index.html#/meuRegistro"><i class="fa fa-list"></i> <span class="nav-label">Meus registros</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        
+            <ul class="nav navbar-top-links navbar-right">
+                
+
+                <li>
+                    <a href="index.html#/login">
+                        <i class="fa fa-sign-out"></i> Sair
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html#/recentes">Home</a>
+            </li>
+            <li class="active">
+                <strong>Inserir Auncio</strong>
+            </li>
+        </ol>
+         <h1 class="logo-name ">Inserir Novo Anuncio</h1>
+    </div>
+</div>
+ 
+            <div class="wrapper wrapper-content animated fadeInRight ecommerce" ng-controller="anuncioCtrl">
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="tabs-container">
+
+                <uib-tabset>
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Dados Básicos
+                        </uib-tab-heading>
+                        <div class="panel-body">
+
+                            <fieldset class="form-horizontal">
+                                <div class="form-group"><label class="col-sm-2 control-label">Título do anúncio:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" ng-model="anuncio.titulo" placeholder="Insira aqui seu titúlo"></div>
+                                </div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Descrição do Anúncio:</label>
+                                    <div class="col-sm-10"><input type="textarea" ng-model="anuncio.descricao" class="form-control" placeholder="Faça uma breve descrição do seus termos de venda e/ou  troca"></div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </uib-tab>
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Selecionar Veículo ou Peça
+                        </uib-tab-heading>
+                        <div class="panel-body">
+                                <fieldset class="form-horizontal">
+                                    <div class="form-group" ng-show="pecaSelecionada == undefined "><label class="col-sm-2 control-label">  Veículo</label>
+                                        <div class="col-sm-10"><select class="form-control m-b" name="veiculo" ng-model="veiculoSelecionado" >
+                                             <option>Veiculo</option>
+                                    </select>                          
+                                    </div>
+                         </div>
+                           <div class="form-group" ng-show="veiculoSelecionado == undefined "><label class="col-sm-2 control-label">  Peça</label>
+                               <div class="col-sm-10"><select class="form-control m-b" name="peca" ng-model="pecaSelecionada" >
+                                             <option>Peça</option>
+                                    </select>                          
+                                    </div>
+                         </div>
+                       
+                        </fieldset>
+                    </uib-tab>
+                   
+                  <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary" type="button" ng-click="cadastrar()">Salvar</button>
+                            </div>
+                        </div>
+                </uib-tabset>
+            </div>
+            </div>
+                
+
+        </div>
+    </div>
+
+</div>

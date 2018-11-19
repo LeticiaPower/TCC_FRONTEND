@@ -1,0 +1,277 @@
+ <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="img/logo2.png" heigth="140px" width="180px"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold" >Usuario</span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="index.html#/login">Sair</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html#/anuncios"><i class="fa fa-clock-o"></i> <span class="nav-label">Anuncios Recentes</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirInfoPessoal"><i class="fa fa-user-circle"></i> <span class="nav-label">Cadastrar/Alterar Dados</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirPeca"><i class="fa fa-plus-circle"></i> <span class="nav-label">Cadastrar Peça</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirAnuncio"><i class="fa fa-car"></i> <span class="nav-label">Novo Anuncio</span></a>
+                </li>
+                 <li>
+                    <a href="index.html#/buscar"><i class="fa fa-search"></i> <span class="nav-label">Buscar Anúncio</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirVeiculo"><i class="fa fa-plus-circle"></i> <span class="nav-label">Cadastrar Veículo</span></a>
+                </li>
+                                <li>
+                <a href="index.html#/meuRegistro"><i class="fa fa-list"></i> <span class="nav-label">Meus registros</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        
+            <ul class="nav navbar-top-links navbar-right">
+                
+
+                <li>
+                    <a href="index.html#/login">
+                        <i class="fa fa-sign-out"></i> Sair
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h1 class="logo-name ">Buscar Anúncios</h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html#/recentes">Home</a>
+            </li>
+            <li class="active">
+                <strong>Buscar Anúncios</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+
+
+            <div class="ibox-content m-b-sm border-bottom">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="marca">Marca</label>
+<!--                            <input type="text" id="marca" name="marca" value="" placeholder="Order ID" class="form-control">-->
+                                <select class="form-control"ng-model="veiculo.marca" >
+                                            <option selected>Selecionar</option>
+                                            <option>Fiat</option>
+                                            <option>Cherolet - GM</option>
+                                            <option>Volkswagen</option>
+                                            <option>Toyota</option>
+                                            <option>Honda</option>
+                                            <option>Renault</option>
+                                            <option>Ford</option>
+                                            <option>Peugeot</option>
+                                            <option>Nissan</option>
+                                            <option>Hiunday</option>
+                                            <option>Citroen</option>
+                                            <option>BMW</option>
+                                            <option>Audi</option>
+                                            <option>Land Rover</option>
+                                            <option>Mercedes-Benz</option>
+                                            <option>Mitsubishi</option>
+                                            <option>Suzuki</option>
+                                            <option>Volvo</option>
+                                            <option>Alfa Romeo</option>
+                                            <option>Chery</option>
+                                            <option>JAC</option>
+                                            <option>Adamo</option>
+                                            <option>Agrale</option>
+                                            <option>Avallone</option>
+                                            <option>Bianco</option>
+                                            <option>Cross Lander</option>
+                                            <option>DKW - Vemag</option>
+                                            <option>Dodge</option>
+                                            <option>Envemo</option>
+                                            <option>FNM</option>
+                                            <option>GMC</option>
+                                            <option>Gurgel</option>
+                                            <option>Jeep</option>
+                                            <option>JPX</option>
+                                            <option>Lobini</option>
+                                            <option>Mahindra</option>
+                                            <option>Mini</option>
+                                            <option>Puma</option>
+                                            <option>Santa Matilde</option>
+                                            <option>Troller</option>
+                                            <option>Willys</option>
+                                        </select>
+                                    </div>
+                                </div>
+                       
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="status">Modelo</label>
+<!--                            <input type="text" id="status" name="status" value="" placeholder="Status" class="form-control">-->
+                                        <select class="form-control" ng-model="">
+                                            <option selected>Selecionar</option>
+                                            <option>...</option>
+                                        </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="customer">Combustível:</label>
+                            <select class="form-control" ng-model="">
+                                                               <option selected>Selecionar</option>
+                                                               <option>Gasolina</option>
+                                                               <option>Alcool</option>
+                                                               <option>Flex</option>
+                                                               <option>Metanol</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="customer">Cambio:</label>
+                            <select class="form-control" ng-model="">
+                                            <option selected>Selecionar</option>
+                                            <option>Manual</option>
+                                            <option>Automático</option>
+                                        </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="customer">Portas:</label>
+                            <select class="form-control" ng-model="">
+                                                               <option selected>Selecionar</option>
+                                                               <option>3</option>
+                                                               <option>4</option>
+                                                               <option>5</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                   <div class="form-group">
+                            <label class="col-form-label" for="customer">Categoria:</label>
+                                        <select class="form-control" ng-model="">
+                                            <option selected>Selecionar</option>
+                                            <option>Veículos</option>
+                                            <option>Utilitário</option>
+                                        </select>
+                        </div>
+                </div>
+
+            </div>
+                <div class="row">
+                   <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="customer">Cor:</label>
+                            <select class="form-control" ng-model="">
+                                                               <option selected>Selecionar</option>
+                                                                <option>Branco</option>
+                                                                <option>Azul</option> 
+                                                                <option>Preto</option> 
+                                                                <option>Prata</option> 
+                                                                <option>Vermelho</option> 
+                                                                <option>Amarelo</option> 
+                                                                <option>Cinza</option> 
+                                                                <option>Laranja</option> 
+                                                                <option>Verde</option> 
+                                                                <option>Marrom</option> 
+                                                                <option>Bege</option> 
+                                                                <option>Rosa</option> 
+                                                                <option>Dourado</option> 
+                                                                <option>Champanhe</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-form-label" for="customer">Caracteristica:</label>
+                            <select class="form-control" ng-model="">
+                                                               <option selected>Selecionar</option>
+                                                               <option>Antigo</option>
+                                                               <option>Esportivo</option>
+                                                               <option>Preparado</option>
+                                                               <option>Importado</option>
+                                                               <option>Exótico</option>
+                                                               <option>Superesportivo</option>
+                                                               <option>Luxo</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                   <div class="form-group" data-ng-controller="ionSlider as slider">
+                            <label class="col-form-label" for="customer">Ano:</label>
+                                       <div ion-range-slider range-options="slider.ionSliderOptions1"></div>
+                </div>
+
+            </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+
+                    <div class="product-imitation">
+                        <img src="img/carro.png"  style="width: 100%; height: "/>
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                    R$15.000,00
+                                </span>
+                        <small class="text-muted">Marca</small>
+                        <a href="#" class="product-name"> Modelo</a>
+
+
+
+                        <div class="small m-t-xs">
+                           Resumo da descrição...
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a href="#" class="btn btn-xs btn-outline btn-success">Info <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+       
+
+    </div>
+
+
+
+
+</div>

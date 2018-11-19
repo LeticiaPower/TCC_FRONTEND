@@ -1,0 +1,127 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h1 class="logo-name "><img src="img/logo1.png" heigth="140px" width="180px">Administrador</h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Inserir Dados</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight ecommerce" ng-controller="GerirInfosBasicasCtrl">
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="tabs-container">
+
+                <uib-tabset>
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Categoria
+                        </uib-tab-heading>
+                        <div class="panel-body">
+
+                            <fieldset class="form-horizontal">
+                                <div class="form-group"><label class="col-sm-2 control-label">Nova Categoria:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="Insira aqui a categoria"></div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </uib-tab>
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Marca
+                        </uib-tab-heading>
+                        
+                        <div class="panel-body">
+                            
+
+                            <fieldset class="form-horizontal"><div class="form-group"><label class="col-sm-2 control-label">Selecione a categoria para adicionar nova marca:</label>
+                                    <div class="col-sm-10"><select class="form-control" >
+                                                               <option selected>Selecionar</option>
+                                                               <option>...</option>
+                                                               
+                                                            </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group"><label class="col-sm-2 control-label">Nova Marca:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="Insira aqui a marca"></div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </uib-tab> 
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Modelo
+                        </uib-tab-heading>
+                        
+                        <div class="panel-body">
+                            
+
+                            <fieldset class="form-horizontal"><div class="form-group"><label class="col-sm-2 control-label">Selecione a Marca para adicionar novo modelo:</label>
+                                    <div class="col-sm-10"><select class="form-control" >
+                                                               <option selected>Selecionar</option>
+                                                               <option>...</option>
+                                                               
+                                                            </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group"><label class="col-sm-2 control-label">Novo Modelo:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="Insira aqui a marca"></div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </uib-tab> 
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Versão
+                        </uib-tab-heading>
+                        
+                        <div class="panel-body">
+                            
+
+                            <fieldset class="form-horizontal">
+                                
+                                <div class="form-group"><label class="col-sm-2 control-label">Selecione a marca:</label>
+                                     <div class="col-sm-10"><select class="form-control" >
+                                                               <option selected>Selecionar</option>
+                                                               <option>Fiat</option>
+                                                               <option>Chevrolet</option>
+                                                               <option>Reault</option>
+                                                               <option>Toyota</option>
+                                                            </select>
+                                    </div>
+                                </div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Selecione o modelo:</label>
+                                     <div class="col-sm-10"><select class="form-control" >
+                                                               <option selected>Selecionar</option>
+                                                               <option>...</option>
+                                                            </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group"><label class="col-sm-2 control-label">Nova Versão:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="Insira aqui a versão"></div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </uib-tab> 
+                     
+                </uib-tabset>
+                <div><button ng-click="cadastrar()" class="btn btn-success full-width m-b" >Cadastrar</button></div>
+</div>
+            </div>
+
+
+        </div>
+    </div>

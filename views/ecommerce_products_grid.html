@@ -1,0 +1,118 @@
+ <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="img/logo2.png" heigth="140px" width="180px"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold" >Usuario</span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="index.html#/login">Sair</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html#/anuncios"><i class="fa fa-clock-o"></i> <span class="nav-label">Anuncios Recentes</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirInfoPessoal"><i class="fa fa-user-circle"></i> <span class="nav-label">Cadastrar/Alterar Dados</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirPeca"><i class="fa fa-plus-circle"></i> <span class="nav-label">Cadastrar Peça</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirAnuncio"><i class="fa fa-car"></i> <span class="nav-label">Novo Anuncio</span></a>
+                </li>
+                 <li>
+                    <a href="index.html#/buscar"><i class="fa fa-search"></i> <span class="nav-label">Buscar Anúncio</span></a>
+                </li>
+                <li>
+                    <a href="index.html#/inserirVeiculo"><i class="fa fa-plus-circle"></i> <span class="nav-label">Cadastrar Veículo</span></a>
+                </li>
+                                <li>
+                <a href="index.html#/meuRegistro"><i class="fa fa-list"></i> <span class="nav-label">Meus registros</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        
+            <ul class="nav navbar-top-links navbar-right">
+                
+
+                <li>
+                    <a href="index.html#/login">
+                        <i class="fa fa-sign-out"></i> Sair
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+<div class="row wrapper border-bottom white-bg page-heading" >
+    <div class="col-lg-10">
+        <h1 class="logo-name ">Anúncios Recentes</h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html#/recentes">Home</a>
+            </li>
+            <li class="active">
+                <strong>Anúncios Recentes</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+            <div class="wrapper wrapper-content animated fadeInRight" ng-controller="RecenteCtrl">
+    <div class="row" ng-init="buscar()">
+        <div class="col-md-3" ng-repeat="a in anuncios">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+                    <div class="product-imitation">
+                        <img src="{{a.veiculo.imagem}}"  style="width: 100%; height: "/>
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                    {{a.veiculo.valor}}
+                                </span>
+                        <a href="index.html#/detalhes" class="product-name">{{a.titulo}} titulo</a>
+                        <small class="text-muted">{{a.veiculo.marca}}marca</small>
+                        <a class="product-name">{{a.veiculo.modelo}}modelo</a>
+
+
+
+                        <div class="small m-t-xs">
+                           {{a.descricao}}
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a href="index.html#/detalhes" class="btn btn-xs btn-outline btn-success">Info <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+        
+       
+
+    </div>
+
+
+
+
+</div>
