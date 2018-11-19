@@ -2,9 +2,13 @@
 function UsuarioService($http) {
 var vm=this;
 
+vm.logar=function(usuario){ 
+ return $http.post("http://localhost:8080/app/usuario/logar", usuario);    
+ }; 
+
  vm.cadastrar=function(usuario){ 
  $http.post("http://localhost:8080/app/usuario/cadastroUsuario", usuario);    
- } 
+ }; 
 };
 
 function AnuncioService($http) {
@@ -12,11 +16,18 @@ var vm=this;
 
  vm.cadastrar=function(anuncio){ 
  return $http.post("http://localhost:8080/app/dadosAnuncio/cadastraDadosAnuncio", anuncio);    
- } 
+ } ;
  
  vm.buscar=function(){
 return $http.get("http://localhost:8080/app/dadosAnuncio/listaDadosAnuncio");    
- }
+ };
+
+ vm.excluirAnuncio=function(anuncio){ 
+ return $http.get("http://localhost:8080/app/dadosAnuncio/excluiDadosAnuncio", anuncio);    
+ }; 
+ vm.alterarAnuncio=function(anuncio){ 
+ return $http.post("http://localhost:8080/app/dadosAnuncio/alterarDadosAnuncio", anuncio);    
+ };
  
 };
 
@@ -25,15 +36,15 @@ var vm=this;
 
  vm.cadastrar=function(pessoa){ 
  return $http.post("http://localhost:8080/app/pessoa/cadastraPessoa", pessoa);    
- } 
+ };
  
- vm.buscar=function(){
-return $http.get("http://localhost:8080/app/pessoa/listaPessoa");    
- }
+ vm.buscarPorId=function(id){
+return $http.get("http://localhost:8080/app/pessoa/buscaPorId/"+id );    
+ };
  
   vm.alterar=function(pessoa){ 
  return $http.post("http://localhost:8080/app/pessoa/alterarPessoa", pessoa);    
- } 
+ }; 
 };
 
 function RecenteService($http) {
@@ -41,31 +52,26 @@ var vm=this;
  
  vm.buscar=function(){
 return $http.get("http://localhost:8080/app/dadosAnuncio/listaDadosAnuncio");    
- }
- 
-  vm.alterar=function(pessoa){ 
- return $http.post("http://localhost:8080/app/pessoa/alterarPessoa", pessoa);    
- } 
+ };
 };
 
 function PecaService($http) {
 var vm=this;
 
  vm.cadastrar=function(peca){ 
- return $http.post("http://localhost:8080/app/peca/cadastraPeca", peca);    
- } 
+ return $http.post("http://localhost:8080/app/pecas/cadastraPeca", peca);    
+ }; 
  
  vm.buscar=function(){
-return $http.get("http://localhost:8080/app/peca/listaPeca");    
- }
+return $http.get("http://localhost:8080/app/pecas/listaPeca");    
+ };
  
   vm.alterar=function(peca){ 
- return $http.post("http://localhost:8080/app/peca/alterarPeca", peca);    
- } 
- 
- vm.excluir=function(peca){
-return $http.get("http://localhost:8080/app/peca/alterarPeca", peca);  
- }
+ return $http.post("http://localhost:8080/app/pecas/alterarPeca", peca);    
+ }; 
+  vm.excluir=function(peca){ 
+ return $http.get("http://localhost:8080/app/pecas/excluiPeca", peca);    
+ }; 
 };
 
 function VeiculoService($http) {
@@ -73,20 +79,20 @@ var vm=this;
 
  vm.cadastrar=function(veiculo){ 
  return $http.post("http://localhost:8080/app/veiculo/cadastraVeiculo", veiculo);    
- } 
+ }; 
  
  vm.buscar=function(){
 return $http.get("http://localhost:8080/app/veiculo/listaVeiculo");    
- }
+ };
  
   vm.alterar=function(veiculo){ 
  return $http.post("http://localhost:8080/app/veiculo/alterarVeiculo", veiculo);    
- } 
- 
- vm.excluir=function(veiculo){
-return $http.get("http://localhost:8080/app/veiculo/alterarVeiculo", veiculo);  
- }
+ };
+  vm.excluir=function(veiculo){ 
+ return $http.get("http://localhost:8080/app/veiculo/excluiVeiculo", veiculo);    
+ }; 
 };
+
 
 
 angular
@@ -97,4 +103,3 @@ angular
      .service('RecenteService', RecenteService)
      .service('PecaService', PecaService)
      .service('VeiculoService', VeiculoService)
-     
