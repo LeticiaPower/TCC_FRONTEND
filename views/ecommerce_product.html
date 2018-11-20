@@ -102,33 +102,58 @@
                         <uib-tab-heading>
                             Selecionar Veículo ou Peça
                         </uib-tab-heading>
-                        <div class="panel-body">
+                        <div class="panel-body" ng-init="buscar()">
                                 <fieldset class="form-horizontal">
-                                    <div class="form-group" ng-show="pecaSelecionada == undefined "><label class="col-sm-2 control-label">  Veículo</label>
-                                        <div class="col-sm-10"><select class="form-control m-b" name="veiculo" ng-model="veiculoSelecionado" >
-                                            <option selected></option> 
-                                            <option>Veiculo</option>
+                                    <div class="form-group" ng-show="anuncioPeca == undefined "><label class="col-sm-2 control-label">  Veículo</label>
+                                        <div class="col-sm-10"><select class="form-control m-b" name="veiculo" ng-model="anuncioVeiculo" >
+                                                 <option  ng-repeat="v in veiculos">{{v.modelo.nomeModelo}}</option>
                                     </select>                          
                                     </div>
                          </div>
-                           <div class="form-group" ng-show="veiculoSelecionado == undefined "><label class="col-sm-2 control-label">  Peça</label>
-                               <div class="col-sm-10"><select class="form-control m-b" name="peca" ng-model="pecaSelecionada" >
-                                            <option selected></option>
-                                            <option>Peça</option>
+                           <div class="form-group" ng-show="anuncioVeiculo == undefined "><label class="col-sm-2 control-label">  Peça</label>
+                               <div class="col-sm-10"><select class="form-control m-b" name="peca" ng-model="anuncioPeca" >
+                                             <option ng-repeat="p in pecas">{{p.aplicacao.nomeAplicacao}}</option>
                                     </select>                          
                                     </div>
-                         </div>
-                       
-                        </fieldset>
-                    </uib-tab>
-                   
-                  <div class="form-group">
+                            </div> 
+                            <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary" type="button" ng-click="cadastra()">Salvar</button>
+                                <button class="btn btn-primary" type="button" ng-click="cadastrar()">Salvar</button>
                             </div>
                         </div>
-                </uib-tabset>
-            </div>
+                        </fieldset>
+                    </div>
+            </uib-tab>
+                    <uib-tab>
+                        <uib-tab-heading>
+                            Imagens
+                        </uib-tab-heading>
+                        <div class="panel-body">
+
+                            <fieldset class="form-horizontal">
+                               <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox float-e-margins">
+                                        <div class="ibox-content">
+                                            <form action="#" class="dropzone dz-clickable" dropzone="" id="dropzone">
+                                                <div class="dz-default dz-message"><span><strong>Arraste arquivos pra ca para fazer upload. </strong></span></div>
+                                                </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary" type="button" ng-click="anexar()">Anexar</button>
+                            </div>
+                        </div>
+                            </fieldset>
+
+                        </div>
+                    </uib-tab>
+                    
+        </uib-tabset>
+           
             </div>
                 
 

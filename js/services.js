@@ -21,6 +21,10 @@ var vm=this;
  vm.buscar=function(){
 return $http.get("http://localhost:8080/app/dadosAnuncio/listaDadosAnuncio");    
  };
+ 
+ vm.buscarPorId=function(id){
+return $http.get("http://localhost:8080/app/dadosAnuncio/buscaPorId/"+id );    
+ };
 
  vm.excluirAnuncio=function(anuncio){ 
  return $http.get("http://localhost:8080/app/dadosAnuncio/excluiDadosAnuncio", anuncio);    
@@ -47,14 +51,6 @@ return $http.get("http://localhost:8080/app/pessoa/buscaPorId/"+id );
  }; 
 };
 
-function RecenteService($http) {
-var vm=this;
- 
- vm.buscar=function(){
-return $http.get("http://localhost:8080/app/dadosAnuncio/listaDadosAnuncio");    
- };
-};
-
 function PecaService($http) {
 var vm=this;
 
@@ -64,6 +60,10 @@ var vm=this;
  
  vm.buscar=function(){
 return $http.get("http://localhost:8080/app/pecas/listaPeca");    
+ };
+ 
+  vm.buscarPorId=function(id){
+return $http.get("http://localhost:8080/app/pecas/buscaPorId/"+id );    
  };
  
   vm.alterar=function(peca){ 
@@ -85,12 +85,8 @@ var vm=this;
 return $http.get("http://localhost:8080/app/veiculo/listaVeiculo");    
  };
  
- vm.buscarPorIdPessoa=function(id){
-return $http.get("http://localhost:8080/app/veiculo/listaVeiculosPessoa"+id);    
- };
- 
- vm.buscar=function(){
-return $http.get("http://localhost:8080/app/veiculo/listaVeiculo");    
+ vm.buscarPorId=function(id){
+return $http.get("http://localhost:8080/app/veiculo/buscaPorId/"+id );    
  };
  
   vm.alterar=function(veiculo){ 
@@ -108,6 +104,5 @@ angular
     .service('PessoaService', PessoaService)
     .service('UsuarioService', UsuarioService)
      .service('AnuncioService', AnuncioService)
-     .service('RecenteService', RecenteService)
      .service('PecaService', PecaService)
      .service('VeiculoService', VeiculoService)

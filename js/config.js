@@ -75,7 +75,13 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/inserirVeiculo",
             templateUrl: "views/ecommerce_product_veiculo.html",
             data: { pageTitle: 'Cadastrar Veículo' }
+        })
+               .state('registros', {
+            url: "/meuRegistro",
+            templateUrl: "views/ecommerce_product_registros.html",
+            data: { pageTitle: 'Meus Registros' }
         });
+
 
 }
 angular

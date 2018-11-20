@@ -37,28 +37,58 @@ function LoginCtrl($scope, UsuarioService ) {
      .then(function(response) {
          localStorage.setItem("idUsuario", response.data.id);
         localStorage.setItem("idPessoa", response.data.pessoa.id);
-        localStorage.setItem("idPessoa", response.data.pessoa);
-        window.location.href = 'index.html#/anuncios';
-        alert("Realizado com sucesso!")
+        window.location.href = 'FRONTEND/index.html#/anuncios';
         },function(err){
             alert("Houve um error")
     });
  }
 }
 
-function AnuncioCtrl($scope,VeiculoService ) {
- $scope.veiculos = [];
- $scope.veiculo = {};
+function AnuncioCtrl($scope,AnuncioService, VeiculoService , PecaService) {
+$scope.veiculos = [];
+$scope.pecas = [];
+$scope.anuncio
  
-$scope.buscarVeiculos=function(){ 
-var id = localStorage.getItem("idPessoa");
-    VeiculoService.buscarPorIdPessoa(id)
+ $scope.buscar=function(anuncio){ 
+  
+    PecaService.buscar()
      .then(function(response) {
-         $scope.veiculos = response.data;
+         $scope.pecas  = response.data
+        }),
+     VeiculoService.buscar()
+     .then(function(response) {
+         $scope.veiculos = response.data
+         console.log(response.data);
         },function(err){
             alert("Houve um error")
     });
  }
+ 
+ $scope.buscar=function(anuncio){ 
+  
+    PecaService.buscar()
+     .then(function(response) {
+         $scope.pecas  = response.data
+        }),
+     VeiculoService.buscar()
+     .then(function(response) {
+         $scope.veiculos = response.data
+         console.log(response.data);
+        },function(err){
+            alert("Houve um error")
+    });
+ }
+ 
+  $scope.buscarPorId=function(anuncio){ 
+  
+    AnuncioService.buscarPorId($scope.anuncio.id)
+     .then(function(response) {
+         $scope.anunco  = response.data
+        },function(err){
+            alert("Houve um error")
+    });
+ }
+ 
 
  $scope.cadastrar=function(){ 
   
@@ -112,12 +142,12 @@ var id = localStorage.getItem("idPessoa");
  
 };
 
-function RecenteCtrl($scope,RecenteService ) {
+function RecenteCtrl($scope,AnuncioService ) {
  $scope.anuncios = [];
  
  $scope.buscar=function(){ 
 
-     RecenteService.buscar()
+     AnuncioService.buscar()
      .then(function(response) {
          $scope.anuncios = response.data
          console.log(response.data);
@@ -125,27 +155,17 @@ function RecenteCtrl($scope,RecenteService ) {
             alert("Houve um error")
     });
  }
-
- $scope.cadastrar=function(){ 
-  
-     AnuncioService.cadastrar($scope.anuncio)
-     .then(function(response) {
-      console.log('relaizado com sucesso');
-    },
-    function(err){
-     alert("Houve um error")
-    });
- }
  
  
 };
 
-function PecaCtrl($scope,PecaService ) {
+function PecaCtrl($scope,PecaService, PessoaService ) {
  $scope.pecas = [];
  $scope.peca = {};
+ $scope.pessoa ={};
  
  $scope.buscar=function(){ 
-
+     
      PecaService.buscar()
      .then(function(response) {
          $scope.pecas = response.data
@@ -157,6 +177,8 @@ function PecaCtrl($scope,PecaService ) {
 
  $scope.cadastrar=function(){ 
      console.log($scope.peca);
+     $scope.pessoa = PessoaService.buscarPorId($scope.pessoa.id).then(function(response){response.data})
+
      PecaService.cadastrar($scope.peca)
      .then(function(response) {
       console.log('realizado com sucesso');
@@ -196,7 +218,7 @@ function VeiculoCtrl($scope,VeiculoService ) {
 
  $scope.cadastrar=function(){ 
      console.log($scope.veiculo);
-     VeiculosService.cadastrar($scope.veiculo)
+     VeiculoService.cadastrar($scope.veiculo)
      .then(function(response) {
       console.log('realizado com sucesso');
     },
@@ -219,10 +241,12 @@ function VeiculoCtrl($scope,VeiculoService ) {
 };
 
 function RegistroCtrl($scope, VeiculoService, PecaService, AnuncioService ) {
- $scope.anuncios = [];
- $scope.pecas = [];
- $scope.veiculos = [];
- $scope.veiculo = {};
+$scope.anuncios = [];
+$scope.pecas = [];
+$scope.veiculos = [];
+$scope.anuncio ={};
+$scope.veiculo ={};
+$scope.peca ={};
  
  $scope.buscar=function(){ 
      
@@ -251,11 +275,14 @@ function RegistroCtrl($scope, VeiculoService, PecaService, AnuncioService ) {
     });
  }
    $scope.alterarAnuncio=function(){ 
+     window.location.href = 'FRONTEND/index.html#/inserirAnuncio';
      console.log($scope.anuncio);
-     AnuncioService.alterar($scope.anuncio)
+     AnuncioService.buscarPorId($scope.anuncio.id)
      .then(function(response) {
+         $scope.pessoa = response.data;
       console.log('realizado com sucesso');
     },
+    
     function(err){
      alert("Houve um erro")
     });
@@ -263,6 +290,7 @@ function RegistroCtrl($scope, VeiculoService, PecaService, AnuncioService ) {
  
   $scope.alterarPeca=function(){ 
      console.log($scope.peca);
+     
      PecaService.alterar($scope.peca)
      .then(function(response) {
       console.log('realizado com sucesso');
@@ -282,7 +310,57 @@ function RegistroCtrl($scope, VeiculoService, PecaService, AnuncioService ) {
      alert("Houve um erro")
     });
  }
+  $scope.excluirAnuncio=function(){ 
+     console.log($scope.anuncio.id);
+     AnuncioService.excluir($scope.anuncio.id)
+     .then(function(response) {
+      console.log('realizado com sucesso');
+    },
+    function(err){
+     alert("Houve um erro")
+    });
+ }
  
+  $scope.excluirPeca=function(){ 
+     console.log($scope.peca.id);
+     PecaService.alterar($scope.peca.id)
+     .then(function(response) {
+      console.log('realizado com sucesso');
+    },
+    function(err){
+     alert("Houve um erro")
+    });
+ }
+ 
+  $scope.exluirVeiculo=function(){ 
+     console.log($scope.veiculo.id);
+     VeiculoService.alterar($scope.veiculo.id)
+     .then(function(response) {
+      console.log('realizado com sucesso');
+    },
+    function(err){
+     alert("Houve um erro")
+    });
+ }
+ 
+//   $scope.novoAnuncio=function(){ 
+//    window.location.href = 'FRONTEND/index.html#/inserirAnuncio';
+//    function(err){
+//     alert("Houve um erro")
+//    };
+// }
+//    $scope.novoVeiculo=function(){ 
+//     window.location.href = 'FRONTEND/index.html#/inserirVeiculo';
+//    function(err){
+//     alert("Houve um erro")
+//    };
+// }
+//    $scope.novaPeca=function(){ 
+//     window.location.href = 'FRONTEND/index.html#/inserirPeca';
+//    function(err){
+//     alert("Houve um erro")
+//    };
+// }
 };
 
 angular
@@ -296,7 +374,6 @@ angular
     .controller('VeiculoCtrl', VeiculoCtrl)
     .controller('RegistroCtrl', RegistroCtrl)
     .controller('LoginCtrl', LoginCtrl);
-   
     
 
     

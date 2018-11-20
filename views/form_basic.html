@@ -120,9 +120,9 @@
                         </div>
                         
                          <div class="hr-line-dashed"></div>
-                         <div class="form-group" ><label class="col-sm-2 control-label"><span style="color: red;">*</span>  País</label>
+                         <div class="form-group" ><label class="col-sm-2 control-label">  País</label>
 
-                             <div class="col-sm-10"><select class="form-control m-b" name="pais" ng-model="pessoa.pais" required="true">
+                            <div class="col-sm-10"><select class="form-control m-b" name="pais" ng-model="pessoa.pais">
                                 <option>Brasil</option>
                             
                             </select>
@@ -213,7 +213,8 @@
                         
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary" type="button" ng-click="cadastrar()">Salvar</button>
+                                <button class="btn btn-primary" type="button" ng-click="cadastrar()">Cadastrar</button>
+                                <button class="btn btn-primary" type="button" ng-click="alterar()">Salvar alteração</button>
                             </div>
                         </div>
                     </form>
